@@ -642,6 +642,26 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Get a list of shows saved in the current Spotify user’s library. Optional parameters can be used to limit the number of shows returned.
+   * See [Get User's Saved Shows](https://developer.spotify.com/documentation/web-api/reference/library/get-users-saved-shows/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {Object} [options] Options, being after and limit.
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is an object with a paged object containing
+   * shows.
+   * @returns {Promise|undefined} A promise that if successful, resolves to an object containing a paging object which contains
+   * shows objects. Not returned if a callback is given.
+   */
+  Constr.prototype.getFollowedArtists = function(options, callback) {
+    var requestData = {
+      url: _baseUri + '/me/shows',
+      type: 'GET'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
    * Fetches information about a specific user.
    * See [Get a User's Profile](https://developer.spotify.com/web-api/get-users-profile/) on
    * the Spotify Developer site for more information about the endpoint.
