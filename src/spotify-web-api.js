@@ -653,7 +653,7 @@ var SpotifyWebApi = (function() {
    * @returns {Promise|undefined} A promise that if successful, resolves to an object containing a paging object which contains
    * shows objects. Not returned if a callback is given.
    */
-  Constr.prototype.getFollowedArtists = function(options, callback) {
+  Constr.prototype.getSavedShows = function(options, callback) {
     var requestData = {
       url: _baseUri + '/me/shows',
       type: 'GET'
