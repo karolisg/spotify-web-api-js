@@ -675,7 +675,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.getShow = function(showId, options, callback) {
     var requestData = {
-      url: _baseUri + '/me/shows' + encodeURIComponent(showId),
+      url: _baseUri + '/me/shows/' + encodeURIComponent(showId),
       type: 'GET'
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
